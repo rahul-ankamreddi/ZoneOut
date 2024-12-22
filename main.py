@@ -1,4 +1,4 @@
-# built-ins
+# built-in
 import sys
 
 # installed
@@ -10,9 +10,14 @@ from MainWindow import MainWindow
 
 if __name__ == '__main__':
 
-    app = QApplication(sys.argv)
+    try:
 
-    window = MainWindow()
-    window.show()
+        app = QApplication(sys.argv)
 
-    app.exec_()
+        window = MainWindow()
+        window.show()
+
+    except Exception as e:
+        print(e)
+    else:
+        app.exec_()
